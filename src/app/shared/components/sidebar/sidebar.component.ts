@@ -7,10 +7,7 @@ import { GifsService } from '../../../gifs/services/gifs.service';
   styleUrl: './sidebar.component.css',
 })
 export class SidebarComponent {
-  constructor(private gifsService: GifsService) {
-    if (this.tags.length <= 0) return;
-    this.searchTag(this.tags[0]);
-  }
+  constructor(private gifsService: GifsService) {}
 
   get tags(): string[] {
     return this.gifsService.tagHistory;
