@@ -26,6 +26,11 @@ export class GifsService {
     }
     this._tagsHistory.unshift(tag);
     this._tagsHistory = this.tagHistory.splice(0, 10);
+    this.saveLocalStorage();
+  }
+
+  private saveLocalStorage() {
+    localStorage.setItem('history', JSON.stringify(this._tagsHistory));
   }
   public searchTag(tag: string): void {
     if (tag.length === 0) return;
